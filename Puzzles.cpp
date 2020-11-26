@@ -9,25 +9,11 @@ typedef vector<ll> vll;
 #define in(a, n) \
     vll a(n);    \
     re(i, n) cin >> a[i];
-#define sort_a(a) sort(a.begin(), a.end());
-#define sort_desc(a) sort(a.begin(), a.end(), greater<ll>());
-#define find_a(a, e) find(a.begin(), a.end(), e);
-#define count_a(a,e) count(a.begin(),a.end(),e);
-#define find_aw(a,e) find(a.begin(),a.end(),e);
-#define count_aw(a,e) count(a.begin(),a.end(),e);
-
 #define printV(a)         \
     for (int i : a)       \
         cout << i << " "; \
     cout << "\n";
 
-void solve()
-{
-    ll n, m;
-    cin >> n >> m;
-    in(a, n);
-    printV(a);
-}
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -36,11 +22,26 @@ int main()
 #endif
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    // ll n;
-    // cin >> n;
-    // while (n--)
-    // {
-    solve();
-    // };
+    ll n, m;
+    cin >> n >> m;
+    in(a, m);
+    ll min_Differ = 0;
+    sort(a.begin(), a.end());
+    vll::iterator lower;
+    re(i, m)
+    {
+        for(ll j = i+1; j < m;j++){
+
+        }
+        lower = lower_bound(a.begin(), a.end(), a[i]);
+        // cout <<  << " ";
+        ll d_t = a[(lower - a.begin()) + 1];
+        if (lower - a.begin() != 0 && (a[(lower - a.begin())]) < d_t)
+        {
+            d_t = a[(lower - a.begin())] ;
+        }   
+    }
+    // cout << min_Differ;
+
     return 0;
 }

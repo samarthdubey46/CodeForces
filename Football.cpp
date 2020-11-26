@@ -9,25 +9,11 @@ typedef vector<ll> vll;
 #define in(a, n) \
     vll a(n);    \
     re(i, n) cin >> a[i];
-#define sort_a(a) sort(a.begin(), a.end());
-#define sort_desc(a) sort(a.begin(), a.end(), greater<ll>());
-#define find_a(a, e) find(a.begin(), a.end(), e);
-#define count_a(a,e) count(a.begin(),a.end(),e);
-#define find_aw(a,e) find(a.begin(),a.end(),e);
-#define count_aw(a,e) count(a.begin(),a.end(),e);
-
 #define printV(a)         \
     for (int i : a)       \
         cout << i << " "; \
     cout << "\n";
 
-void solve()
-{
-    ll n, m;
-    cin >> n >> m;
-    in(a, n);
-    printV(a);
-}
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -36,11 +22,29 @@ int main()
 #endif
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    // ll n;
-    // cin >> n;
-    // while (n--)
-    // {
-    solve();
-    // };
+    string s;
+    cin >> s;
+    ll t_count = 0;
+    char last_c = s[0];
+    bool t;
+
+    for (char i : s)
+    {
+        if (t_count == 7)
+        {
+            t = true;
+            break;
+        }
+        i == last_c ? t_count++ : t_count = 0;
+        last_c = i;
+    }
+    if (t)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
     return 0;
 }

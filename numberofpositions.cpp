@@ -9,13 +9,6 @@ typedef vector<ll> vll;
 #define in(a, n) \
     vll a(n);    \
     re(i, n) cin >> a[i];
-#define sort_a(a) sort(a.begin(), a.end());
-#define sort_desc(a) sort(a.begin(), a.end(), greater<ll>());
-#define find_a(a, e) find(a.begin(), a.end(), e);
-#define count_a(a,e) count(a.begin(),a.end(),e);
-#define find_aw(a,e) find(a.begin(),a.end(),e);
-#define count_aw(a,e) count(a.begin(),a.end(),e);
-
 #define printV(a)         \
     for (int i : a)       \
         cout << i << " "; \
@@ -36,11 +29,18 @@ int main()
 #endif
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    // ll n;
-    // cin >> n;
-    // while (n--)
-    // {
-    solve();
-    // };
+    ll n, a, b, Total = 0;
+    cin >> n >> a >> b;
+    for (ll i = n; i >= 1; i--)
+    {
+
+        if (i - 1 >= a && n - i <= b)
+        {
+            Total++;
+            // cout << i << endl;
+        }
+    }
+    cout << Total;
+
     return 0;
 }
